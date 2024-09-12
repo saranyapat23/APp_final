@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="darkyellow">
+      <img src="/assets/icon/ร้านขาว.png" width="125px"><img src="/assets/icon/Rung.png" width="150px"  slot="end">
+</ion-toolbar>
+</ion-header>
+
+<ion-content color="darkyellow" class="ion-padding">
+  <ion-card color="sir">
+    <ion-card color="pigblood">
+      <ion-button shape="round" size="large" style="margin-left: 85px; margin-top: 10px;" color="darkyellow" >
+        โปรดใส่รหัสผ่าน
+      </ion-button>
+
+      <ion-card color="darkyellow" class="ion-padding" shape="round">
+       <ion-item color="pigblood">
+        <ion-input label="UID:" type="UserName" [(ngModel)]="uid" name="uid" placeholder="123" >
+        </ion-input>
+      </ion-item>
+
+      <form (ngSubmit)="onSubmit()">
+      <ion-item color="pigblood" >
+
+        <ion-input label="รหัสผ่าน:" type="Password" [(ngModel)]="password" name="password" placeholder="123456" >
+        </ion-input>
+      </ion-item>
+      <ion-button expand="block" color="pigblood" shape="round" size="large" type="submit">เข้าสู่ระบบ</ion-button>
+    </form>
+    </ion-card>
+
+   </ion-card>
+
+  </ion-card>
+
+
+  </ion-content>
+

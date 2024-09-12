@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="darkyellow">
+      <img src="/assets/icon/ร้านขาว.png" width="125px"><img src="/assets/icon/Rung.png" width="150px"  slot="end">
+</ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-content color="darkyellow" class="ion-padding">
+    <ion-card color="sir">
+      <ion-card color="pigblood">
+        <ion-button shape="round" size="large" style="margin-left: 100px; margin-top: 10px;" color="darkyellow" >
+          รายการสั่งซื้อ
+        </ion-button>
+
+        <ion-card color="darkyellow" class="ion-padding" shape="round">
+          <ion-col>
+          <ion-item color="pigblood" >
+            <label>เมนู : ผัดกระเพรา   x1</label>
+            <ion-badge slot="end" color="success">สั่งอาหารแล้ว</ion-badge>
+          </ion-item>
+
+          <ion-item color="pigblood" >
+            <label>เมนู : ข้าวเปล่า x1</label>
+            <ion-badge slot="end" color="success">สั่งอาหารแล้ว</ion-badge>
+          </ion-item>
+
+          <ion-item color="pigblood" >
+            <label>เมนู : ราดข้าว 2 เมนู x1</label>
+            <ion-badge slot="end" color="success">สั่งอาหารแล้ว</ion-badge>
+          </ion-item>
+
+          <ion-item color="pigblood">
+            <label> รวมเป็นเงิน</label>
+            <ion-badge slot="end" color="tertiary">105 บาท</ion-badge>
+          </ion-item>
+        </ion-col>
+      </ion-card>
+
+     </ion-card>
+
+    </ion-card>
+    <ion-button expand="block" color="pigblood" shape="round" size="large" (click)="goToMenu()">ย้อนกลับ</ion-button>
+    </ion-content>
+</ion-content>

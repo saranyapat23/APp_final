@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="darkyellow">
+      <img src="/assets/icon/ร้านขาว.png" width="125px"><img src="/assets/icon/Rung.png" width="150px"  slot="end">
+</ion-toolbar>
+</ion-header>
+
+<ion-content color="darkyellow" class="ion-padding">
+  <ion-card color="sir">
+    <ion-card color="pigblood">
+      <ion-button shape="round" size="large" style="margin-left: 90px; margin-top: 10px;" color="darkyellow" >
+        วันที่แสดงเมนู
+      </ion-button>
+
+      <ion-card color="sir" class="ion-padding" shape="round">
+        <ion-list class="back">
+        <ion-radio-group>
+          <ion-item color="darkyellow">
+            <ion-radio color="pigblood">เมนูวันจันทร์</ion-radio>
+          </ion-item>
+          <ion-item color="darkyellow">
+            <ion-radio color="pigblood">เมนูวันอังคาร</ion-radio>
+          </ion-item>
+          <ion-item color="darkyellow">
+            <ion-radio color="pigblood">เมนูวันพุธ</ion-radio>
+          </ion-item>
+          <ion-item color="darkyellow">
+            <ion-radio color="pigblood">เมนูวันพฤหัสบดี</ion-radio>
+          </ion-item>
+          <ion-item color="darkyellow">
+            <ion-radio color="pigblood">เมนูวันศุกร์</ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+    </ion-card>
+
+   </ion-card>
+
+  </ion-card>
+  <ion-button expand="block" color="pigblood" shape="round" size="large" id="present-alert">ยืนยัน</ion-button>
+  <ion-alert trigger="present-alert" header="ยืนยันหรือไม่" [buttons]="alertButtons"></ion-alert>
+  </ion-content>

@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="darkyellow">
+      <img src="/assets/icon/ร้านขาว.png" width="125px"><img src="/assets/icon/Rung.png" width="150px"  slot="end">
+</ion-toolbar>
+</ion-header>
+
+
+<ion-content color="darkyellow" class="ion-padding">
+  <ion-card color="sir">
+    <ion-card color="pigblood">
+      <ion-button shape="round" size="large" style="margin-left: 80px; margin-top: 10px;" color="darkyellow" >
+        โปรดกรอกข้อมูล
+      </ion-button>
+
+      <ion-card color="darkyellow" class="ion-padding" shape="round">
+       <ion-item color="pigblood" >
+        <ion-input label="ชื่อ-นามสกุล :" placeholder="Name-Surname" >
+        </ion-input>
+      </ion-item>
+
+      <ion-item color="pigblood" >
+        <ion-input label="เลขที่ห้อง :" placeholder="Room Number" >
+        </ion-input>
+      </ion-item>
+      <ion-item color="pigblood">
+        <ion-input label="เบอร์โทรศัพท์ :" placeholder="Phone" type="number">
+        </ion-input>
+      </ion-item>
+    </ion-card>
+
+   </ion-card>
+
+  </ion-card>
+  <ion-button expand="block" color="pigblood" shape="round" size="large" (click)="goToWaitfood()">สั่งอาหาร</ion-button>
+  </ion-content>

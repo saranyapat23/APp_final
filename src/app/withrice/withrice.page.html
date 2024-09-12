@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="darkyellow">
+    <ion-title>เลือกเมนูสำหรับราดบนข้าว</ion-title>
+    <ion-buttons slot="end" (click)="goBacktoMenu()">
+      <ion-button>ยกเลิก</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding" color="darkyellow" >
+  <ion-card class="ion-padding" color="sir">
+  <ion-list class="master">
+    <ion-item  color="pigblood" *ngFor = "let i of products" color="pigblood">
+      <ion-checkbox justify="space-between" color="darkyellow"><ion-label>
+        {{i.name}}
+        <br>
+        {{i.detail}}
+  </ion-label>
+</ion-checkbox>
+    </ion-item>
+  </ion-list>
+</ion-card>
+  <ion-button  expand="full" color="pigblood" shape="round" size="large" id="present-alert">
+    ยืนยันการสั่งซื้อ
+  </ion-button>
+  <ion-alert trigger="present-alert" header="ยืนยันการสั่งซื้อหรือไม่" [buttons]="alertButtons"></ion-alert>
+</ion-content>

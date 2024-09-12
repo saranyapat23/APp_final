@@ -1,0 +1,55 @@
+// For information on how to create your own theme, please see:
+// http://ionicframework.com/docs/theming/
+:root {
+	--ion-color-darkyellow: #F1C34A;
+	--ion-color-darkyellow-rgb: 241,195,74;
+	--ion-color-darkyellow-contrast: #000000;
+	--ion-color-darkyellow-contrast-rgb: 0,0,0;
+	--ion-color-darkyellow-shade: #d4ac41;
+	--ion-color-darkyellow-tint: #f2c95c;
+}
+
+.ion-color-darkyellow {
+	--ion-color-base: var(--ion-color-darkyellow);
+	--ion-color-base-rgb: var(--ion-color-darkyellow-rgb);
+	--ion-color-contrast: var(--ion-color-darkyellow-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-darkyellow-contrast-rgb);
+	--ion-color-shade: var(--ion-color-darkyellow-shade);
+	--ion-color-tint: var(--ion-color-darkyellow-tint);
+}
+
+:root {
+	--ion-color-pigblood: #9D2222;
+	--ion-color-pigblood-rgb: 157,34,34;
+	--ion-color-pigblood-contrast: #ffffff;
+	--ion-color-pigblood-contrast-rgb: 255,255,255;
+	--ion-color-pigblood-shade: #8a1e1e;
+	--ion-color-pigblood-tint: #a73838;
+}
+
+.ion-color-pigblood {
+	--ion-color-base: var(--ion-color-pigblood);
+	--ion-color-base-rgb: var(--ion-color-pigblood-rgb);
+	--ion-color-contrast: var(--ion-color-pigblood-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-pigblood-contrast-rgb);
+	--ion-color-shade: var(--ion-color-pigblood-shade);
+	--ion-color-tint: var(--ion-color-pigblood-tint);
+}
+
+:root {
+	--ion-color-sir: #CBA134;
+	--ion-color-sir-rgb: 203,161,52;
+	--ion-color-sir-contrast: #000000;
+	--ion-color-sir-contrast-rgb: 0,0,0;
+	--ion-color-sir-shade: #b38e2e;
+	--ion-color-sir-tint: #d0aa48;
+}
+
+.ion-color-sir {
+	--ion-color-base: var(--ion-color-sir);
+	--ion-color-base-rgb: var(--ion-color-sir-rgb);
+	--ion-color-contrast: var(--ion-color-sir-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-sir-contrast-rgb);
+	--ion-color-shade: var(--ion-color-sir-shade);
+	--ion-color-tint: var(--ion-color-sir-tint);
+}

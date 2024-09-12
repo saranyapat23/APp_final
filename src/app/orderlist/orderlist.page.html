@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="darkyellow">
+      <img src="/assets/icon/ร้านขาว.png" width="125px"><img src="/assets/icon/Rung.png" width="150px"  slot="end">
+</ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="darkyellow" class="ion-padding">
+      <ion-card color="sir">
+       <ion-card color="pigblood">
+        <ion-item color="darkyellow" *ngFor = "let c of customer"  >
+          <p>{{c.name}} | {{c.room}}</p>
+        </ion-item>
+      <ion-card >
+      <ion-item color="darkyellow"  *ngFor="let i of products">
+        <ion-label color="pigblood">
+          <h2>{{i.name}}</h2>
+          <p > {{i.detail}}</p>
+        </ion-label>
+        <ion-button slot="end"  color="success">
+          เสร็จสิ้น
+        </ion-button>
+      </ion-item>
+    </ion-card>
+    </ion-card>
+    </ion-card>
+      <ion-button expand="block" color="pigblood" shape="round" size="large" (click)="goToOrder()">ย้อนกลับ</ion-button>
+</ion-content>

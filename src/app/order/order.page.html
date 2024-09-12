@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="darkyellow">
+      <img src="/assets/icon/ร้านขาว.png" width="125px"><img src="/assets/icon/Rung.png" width="150px"  slot="end">
+</ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" >
+  <ion-content color="darkyellow" class="ion-padding">
+    <ion-card color="sir">
+      <ion-card color="pigblood">
+      <ion-button shape="round" size="large" style="margin-left: 95px; margin-top: 10px;" color="darkyellow" >
+        รายการสั่งซื้อ
+      </ion-button>
+      <ion-card >
+        <ion-item *ngFor = "let i of products" color="darkyellow" >
+          <ion-label color="pigblood">
+            <h2>{{i.name}} | {{i.room}}</h2>
+            <p > {{i.detail}}</p>
+            <ion-button (click)="goToMenuorder()" expand="block" shape="round" color="success">ดูรายการอาหาร</ion-button>
+            <ion-button expand="block"  fill="solid" color="pigblood" shape="round" id="present-alert">
+              เสร็จสิ้น
+              <ion-alert trigger="present-alert" header="ยืนยันที่จะลบหรือไม่"  [buttons]="alertButtons"></ion-alert>
+            </ion-button>
+
+          </ion-label>
+
+
+
+        </ion-item>
+      </ion-card>
+
+      </ion-card>
+    </ion-card>
+    <ion-button expand="block" color="pigblood" shape="round" size="large"  id="log-out"> ออกจากระบบ</ion-button>
+    <ion-alert trigger="log-out" header="ยืนยันที่จะออกสู่ระบบหรือไม่"  [buttons]="exitButtons"></ion-alert>
+    </ion-content>
+</ion-content>

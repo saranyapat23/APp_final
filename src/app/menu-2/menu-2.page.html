@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="darkyellow">
+      <img src="/assets/icon/ร้านขาว.png" width="125px"><img src="/assets/icon/Rung.png" width="150px"  slot="end">
+</ion-toolbar>
+</ion-header>
+
+<ion-content color="darkyellow">
+
+<!-- <div *ngFor="let i of cartItems">
+   <h3>{{ i.name }}</h3>
+    <p>{{ i.price }} บาท</p>
+  </div>-->
+  <ion-card color="sir">
+   <ion-card>
+  <ion-item *ngFor="let item of item; let i = index" color="pigblood">
+    <ion-thumbnail slot="start">
+      <img  [src]="item.imageURL">
+    </ion-thumbnail>
+    <ion-label color="darkyellow">
+
+      <h2>{{item.name}}</h2>
+      <p > {{item.detail}}</p>
+    </ion-label>
+    <ion-note color="darkyellow" slot="end" style="font-size: 14px; margin-top: 10px;" > {{item.price}} บาท</ion-note>
+    <ion-button slot="end" fill="clear" size="large" id="present-alert" (click)="deleteItem(i)">
+      <ion-icon name="trash" color="darkyellow" ></ion-icon>
+    </ion-button>
+  </ion-item>
+</ion-card>
+</ion-card>
+  <ion-button expand="block" color="pigblood" shape="round" size="large" (click)="goToLogin()">สั่งอาหาร</ion-button>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end" color="darkyellow">
+    <ion-fab-button color="pigblood">
+      <ion-icon name="caret-back"></ion-icon>
+    </ion-fab-button >
+    <ion-fab-list side="start">
+      <ion-fab-button color="pigblood" (click)="goToWait()" >
+        <ion-icon name="send" ></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button (click)="goToHome()" color="pigblood">
+        <ion-icon name="home"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+</ion-content>

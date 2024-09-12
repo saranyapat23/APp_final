@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="darkyellow">
+      <img src="/assets/icon/ร้านขาว.png" width="125px"><img src="/assets/icon/Rung.png" width="150px"  slot="end">
+</ion-toolbar>
+</ion-header>
+
+<ion-content color="darkyellow">
+  <ion-card color="pigblood">
+    <ion-card-header slot="end">
+      <ion-card-subtitle>ร้านข้าวแกงบ้านเรือง</ion-card-subtitle>
+    </ion-card-header>
+
+
+    <ion-item *ngFor = "let i of products" color="pigblood">
+      <ion-thumbnail slot="start">
+        <img  [src]="i.imageURL">
+      </ion-thumbnail>
+      <ion-label color="darkyellow">
+        <h2>{{i.name}}</h2>
+        <p > {{i.detail}}</p>
+      </ion-label>
+      <ion-note color="darkyellow" slot="end" style="font-size: 14px; margin-top: 10px;" >{{i.price}} บาท</ion-note>
+      <ion-button slot="end" fill="clear" size="large">
+        <ion-icon name="add-circle" color="darkyellow"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+    <ion-button id="open-modal" expand="block" color="darkyellow" size="large" (click)="goToWithrice()">เลือกสำหรับเมนูข้าวราดแกง</ion-button>
+  </ion-card>
+
+
+
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end" >
+    <ion-fab-button color="darkyellow">
+      <ion-icon name="caret-up"></ion-icon>
+    </ion-fab-button >
+    <ion-fab-list side="top">
+      <ion-fab-button (click)="goToContact()" color="darkyellow">
+        <ion-icon name="cart"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="darkyellow" (click)="goToWait()">
+        <ion-icon name="send"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="darkyellow">
+        <ion-icon name="exit" (click)="backToHome()"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+
+</ion-content>
+
+
+
