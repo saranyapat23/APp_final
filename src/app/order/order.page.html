@@ -5,6 +5,8 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" >
+
+
   <ion-content color="darkyellow" class="ion-padding">
     <ion-card color="sir">
       <ion-card color="pigblood">
@@ -19,8 +21,8 @@
             <ion-button (click)="goToMenuorder()" expand="block" shape="round" color="success">ดูรายการอาหาร</ion-button>
             <ion-button expand="block"  fill="solid" color="pigblood" shape="round" id="present-alert">
               เสร็จสิ้น
-              <ion-alert trigger="present-alert" header="ยืนยันที่จะลบหรือไม่"  [buttons]="alertButtons"></ion-alert>
             </ion-button>
+            <ion-alert trigger="present-alert" header="ยืนยันที่จะลบหรือไม่"  [buttons]="alertButtons"></ion-alert>
 
           </ion-label>
 

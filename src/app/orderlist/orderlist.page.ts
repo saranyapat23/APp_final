@@ -31,24 +31,29 @@ export class OrderlistPage implements OnInit {
       id : 1,
       name:'กะเพราเครื่องใน',
       price: 35,
-      detail:'Pad Kra Pao Offal',
+      detail:'Stir-Fired Bassil with Pork Offal',
+      imageURL : '/assets/imageForApp/inchiken.jpg'
     },
     {
       id : 2,
       name:'พะโล้',
       price: 35,
-      detail:'Pork Stewed',
+      detail:'Stewed Pork with Eggs (Pa-Lo)',
+      imageURL : '/assets/imageForApp/พะโล้.jpg'
     },{
       id : 3,
       name:'แกงเขียวหวานไก่',
       price: 35,
       detail:'Thai Green Curry',
+      imageURL : '/assets/imageForApp/greencurry.jpg'
     },{
       id : 4,
       name:'ผัดกะหล่ำปลี',
       price: 35,
       detail:'Stir-fried Cabbage',
+      imageURL : '/assets/imageForApp/กะหล่ำ.jpg'
     }
+
   ]
 
 }

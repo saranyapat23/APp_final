@@ -3,6 +3,8 @@ import { NavController, ModalController } from '@ionic/angular';
 import { ServiceCartPage } from './../service-cart/service-cart.page';
 import { ActionSheetController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { DataapiService } from '../dataapi.service';
+
 
 @Component({
   selector: 'app-menu-1',
@@ -11,10 +13,64 @@ import { Router } from '@angular/router';
 })
 export class Menu1Page implements OnInit {
 
+  menu:any =[];
+
+
+
+
+
+
+
+
+
+
+
+
+  dataMenu_Table:any = []
+
+    txtmenu_id:any;
+    txtname_menu:any;
+    txtprice:any;
+
+    menu_id:any;
+    name_menu:any;
+    price:any;
+
   presentingElement : any;
 
 
-  constructor(private navCtrl: NavController, private servicecartpage: ServiceCartPage, private actionSheetCtrl: ActionSheetController, public modalController: ModalController , private router: Router) {}
+  constructor(private navCtrl: NavController, private servicecartpage: ServiceCartPage, private actionSheetCtrl: ActionSheetController, public modalController: ModalController , private router: Router,
+    public dataapi: DataapiService
+  ) {
+    this.loadDataMenu();
+  }
+
+  addMenu_Table(){
+    let data ={
+      menu_id:this.txtmenu_id,
+      name_menu:this.txtname_menu,
+      price:this.price
+    }
+
+    this.dataapi.addMenu_Table(data).subscribe({
+      next: (res: any) =>{
+        console.log("ข้อมูลถูกเพิ่ม",res);
+      },error:(error: any) =>{
+        console.log("ไม่สามารถเพิ่มได้",error);
+      }
+
+    });
+    this.clearForm();
+  }
+
+  clearForm(){
+    this.txtmenu_id='',
+    this.txtname_menu='',
+    this.price=''
+  }
+  showdata(){
+    this.router.navigate(['/menu-2']);
+  }
 
 
 
@@ -44,7 +100,19 @@ export class Menu1Page implements OnInit {
 
 
   ngOnInit() {
-    this.presentingElement = document.querySelector('.ion-page') ;
+    this.presentingElement = document.querySelector('.ion-page'), this.loadDataMenu() ;
+  }
+
+  loadDataMenu(){
+    this.dataapi.listMenu().subscribe({
+      next: (res: any) =>{
+        console.log('successfully');
+        this.menu = res;
+      },
+      error:(error: any)=>{
+        console.log('Error',error);
+      }
+    });
   }
 
 
@@ -95,24 +163,32 @@ export class Menu1Page implements OnInit {
 
 
 
+  /**  menuList = [
+    { menu_id: 101, name_menu: 'กะเพราเครื่องใน', price: 35 },
+    { menu_id: 102, name_menu: 'เมนูแกงเขียวหวานไก่', price: 40 },
+    { menu_id: 3, name_menu: 'แกงเขียวหวาน', price: 45 },
+  ]; -->*/
+
+
 
   products =[
     {
-      id : 1,
-      name:'กะเพราเครื่องใน',
+      menu_id : 101,
+      name_menu:'กะเพราเครื่องใน',
       price: 35,
-      detail:'Pad Kra Pao Offal',
-      imageURL : '/assets/imageForApp/inchiken.jpg'
+      detail:'Stir-Fired Bassil with Pork Offal',
+      imageURL : '/assets/imageForApp/inchiken.jpg',
+      value : 'กะเพราเครื่องใน'
     },
     {
-      id : 2,
-      name:'พะโล้',
+      menu_id : 102,
+      name_menu:'พะโล้',
       price: 35,
-      detail:'Pork Stewed',
+      detail:'Stewed Pork with Eggs (Pa-Lo)',
       imageURL : '/assets/imageForApp/พะโล้.jpg'
     },{
-      id : 3,
-      name:'แกงเขียวหวานไก่',
+      menu_id : 3,
+      name_menu:'แกงเขียวหวานไก่',
       price: 35,
       detail:'Thai Green Curry',
       imageURL : '/assets/imageForApp/greencurry.jpg'
@@ -124,9 +200,9 @@ export class Menu1Page implements OnInit {
       imageURL : '/assets/imageForApp/กะหล่ำ.jpg'
     },{
       id : 5,
-      name:'กะเพาไก่สับ',
+      name:'กะเพราไก่สับ',
       price: 35,
-      detail:'Minced Chicken Kra Pao',
+      detail:'Stir-fired Minced Chicken with Thai Bassil',
       imageURL : '/assets/imageForApp/กะเพาไก่สับ.jpg'
     },{
       id : 6,
@@ -138,7 +214,7 @@ export class Menu1Page implements OnInit {
       id : 7,
       name:'ผัดกวางตุ้งใต้หวัน',
       price: 35,
-      detail:'Stir-fried Cantonese',
+      detail:'Stir-Fried Taiwanese Bok Choy',
       imageURL : '/assets/imageForApp/กวางตุ้ง.jpg'
     },{
       id : 8,
@@ -150,13 +226,19 @@ export class Menu1Page implements OnInit {
       id : 9,
       name:'ไข่ดาว',
       price: 10,
-      detail:'fried egg',
+      detail:'Fried Egg',
       imageURL : '/assets/imageForApp/ไข่ดาว.jpg'
-    },
+    }
+
 
 
   ]
 
+  isToastOpen = false;
+
+  setOpen(isOpen: boolean) {
+    this.isToastOpen = isOpen;
+  }
 
 
 }

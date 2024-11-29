@@ -11,27 +11,160 @@
     </ion-card-header>
 
 
-    <ion-item *ngFor = "let i of products" color="pigblood">
+    <ion-item  color="pigblood">
       <ion-thumbnail slot="start">
-        <img  [src]="i.imageURL">
+        <img  src="assets/imageForApp/inchiken.jpg">
       </ion-thumbnail>
       <ion-label color="darkyellow">
-        <h2>{{i.name}}</h2>
-        <p > {{i.detail}}</p>
+        <h2>กะเพราเครื่องใน</h2>
+        <p > Stir-Fired Bassil with Pork Offal </p>
       </ion-label>
-      <ion-note color="darkyellow" slot="end" style="font-size: 14px; margin-top: 10px;" >{{i.price}} บาท</ion-note>
-      <ion-button slot="end" fill="clear" size="large">
+      <ion-note color="darkyellow" slot="end" style="font-size: 14px; margin-top: 10px;" >35 บาท</ion-note>
+      <ion-button slot="end" fill="clear" size="large" (click)="setOpen(true)" >
         <ion-icon name="add-circle" color="darkyellow"></ion-icon>
       </ion-button>
     </ion-item>
 
-    <ion-button id="open-modal" expand="block" color="darkyellow" size="large" (click)="goToWithrice()">เลือกสำหรับเมนูข้าวราดแกง</ion-button>
+    <ion-item  color="pigblood">
+      <ion-thumbnail slot="start">
+        <img  src="assets/imageForApp/พะโล้.jpg">
+      </ion-thumbnail>
+      <ion-label color="darkyellow">
+        <h2>พะโล้</h2>
+        <p > Stewed Pork with Eggs (Pa-Lo) </p>
+      </ion-label>
+      <ion-note color="darkyellow" slot="end" style="font-size: 14px; margin-top: 10px;" >35 บาท</ion-note>
+      <ion-button slot="end" fill="clear" size="large" (click)="setOpen(true)" >
+        <ion-icon name="add-circle" color="darkyellow"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+    <ion-item  color="pigblood">
+      <ion-thumbnail slot="start">
+        <img  src="assets/imageForApp/greencurry.jpg">
+      </ion-thumbnail>
+      <ion-label color="darkyellow">
+        <h2>แกงเขียวหวานไก่</h2>
+        <p > Thai Green Curry </p>
+      </ion-label>
+      <ion-note color="darkyellow" slot="end" style="font-size: 14px; margin-top: 10px;" >35 บาท</ion-note>
+      <ion-button slot="end" fill="clear" size="large" (click)="setOpen(true)" >
+        <ion-icon name="add-circle" color="darkyellow"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+    <ion-item  color="pigblood">
+      <ion-thumbnail slot="start">
+        <img  src="assets/imageForApp/กะหล่ำ.jpg">
+      </ion-thumbnail>
+      <ion-label color="darkyellow">
+        <h2>ผัดกะหล่ำปลี</h2>
+        <p > Stir-fried Cabbage </p>
+      </ion-label>
+      <ion-note color="darkyellow" slot="end" style="font-size: 14px; margin-top: 10px;" >35 บาท</ion-note>
+      <ion-button slot="end" fill="clear" size="large" (click)="setOpen(true)" >
+        <ion-icon name="add-circle" color="darkyellow"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+    <ion-item  color="pigblood">
+      <ion-thumbnail slot="start">
+        <img  src="assets/imageForApp/กะเพาไก่สับ.jpg">
+      </ion-thumbnail>
+      <ion-label color="darkyellow">
+        <h2>กะเพราไก่สับ</h2>
+        <p > Stir-fired Minced Chicken with Thai Bassil </p>
+      </ion-label>
+      <ion-note color="darkyellow" slot="end" style="font-size: 14px; margin-top: 10px;" >35 บาท</ion-note>
+      <ion-button slot="end" fill="clear" size="large" (click)="setOpen(true)" >
+        <ion-icon name="add-circle" color="darkyellow"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <ion-item  color="pigblood">
+      <ion-thumbnail slot="start">
+        <img  src="assets/imageForApp/พริกแกงผักบุ้ง.jpg">
+      </ion-thumbnail>
+      <ion-label color="darkyellow">
+        <h2>ผัดพริกแกงผักบุ้ง</h2>
+        <p > Stir-fried Water Spinach </p>
+      </ion-label>
+      <ion-note color="darkyellow" slot="end" style="font-size: 14px; margin-top: 10px;" >35 บาท</ion-note>
+      <ion-button slot="end" fill="clear" size="large" (click)="setOpen(true)" >
+        <ion-icon name="add-circle" color="darkyellow"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+    <ion-item  color="pigblood">
+      <ion-thumbnail slot="start">
+        <img  src="assets/imageForApp/กวางตุ้ง.jpg">
+      </ion-thumbnail>
+      <ion-label color="darkyellow">
+        <h2>ผัดกวางตุ้งใต้หวัน</h2>
+        <p > Stir-Fried Taiwanese Bok Choy </p>
+      </ion-label>
+      <ion-note color="darkyellow" slot="end" style="font-size: 14px; margin-top: 10px;" >35 บาท</ion-note>
+      <ion-button slot="end" fill="clear" size="large" (click)="setOpen(true)" >
+        <ion-icon name="add-circle" color="darkyellow"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+    <ion-item  color="pigblood">
+      <ion-thumbnail slot="start">
+        <img  src="assets/imageForApp/ไก่พริกแกง.jpg">
+      </ion-thumbnail>
+      <ion-label color="darkyellow">
+        <h2>ผัดไก่พริกแกงใต้</h2>
+        <p > Stir-Fried Taiwanese Bok Choy </p>
+      </ion-label>
+      <ion-note color="darkyellow" slot="end" style="font-size: 14px; margin-top: 10px;" >35 บาท</ion-note>
+      <ion-button slot="end" fill="clear" size="large" (click)="setOpen(true)" >
+        <ion-icon name="add-circle" color="darkyellow"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+    <ion-item  color="pigblood">
+      <ion-thumbnail slot="start">
+        <img  src="assets/imageForApp/fried_egg_.png">
+      </ion-thumbnail>
+      <ion-label color="darkyellow">
+        <h2>ไข่ดาว</h2>
+        <p > Fried Egg </p>
+      </ion-label>
+      <ion-note color="darkyellow" slot="end" style="font-size: 14px; margin-top: 10px;" >7 บาท</ion-note>
+      <ion-button slot="end" fill="clear" size="large" (click)="setOpen(true)" >
+        <ion-icon name="add-circle" color="darkyellow"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+      <ion-item  color="pigblood">
+      <ion-thumbnail slot="start">
+        <img  src="assets/imageForApp/rice-.webp">
+      </ion-thumbnail>
+      <ion-label color="darkyellow">
+        <h2>ข้าวเปล่า</h2>
+        <p > Rice </p>
+      </ion-label>
+      <ion-note color="darkyellow" slot="end" style="font-size: 14px; margin-top: 10px;" >10 บาท</ion-note>
+      <ion-button slot="end" fill="clear" size="large" (click)="setOpen(true)" >
+        <ion-icon name="add-circle" color="darkyellow"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+
+
+
+
+    <!-- <ion-button id="open-modal" expand="block" color="darkyellow" size="large" (click)="goToWithrice()">กดเพื่อเลือกสำหรับเมนูข้าวราดแกง</ion-button>-->
   </ion-card>
 
 
+  <ion-toast color="success"
+  [isOpen]="isToastOpen" message="เพิ่มสินค้าไปที่ตะกร้าแล้ว" [duration]="1500" (didDismiss)="setOpen(false)"></ion-toast>
 
 
-  <ion-fab slot="fixed" vertical="bottom" horizontal="end" >
+
+
+ <ion-fab slot="fixed" vertical="bottom" horizontal="end" >
     <ion-fab-button color="darkyellow">
       <ion-icon name="caret-up"></ion-icon>
     </ion-fab-button >

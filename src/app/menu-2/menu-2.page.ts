@@ -3,6 +3,8 @@ import { NavController } from '@ionic/angular';
 import { ServiceCartPage } from '../service-cart/service-cart.page';
 import { AlertController } from '@ionic/angular';
 import { Menu1Page } from '../menu-1/menu-1.page';
+import { DataapiService } from '../dataapi.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-menu-2',
@@ -11,13 +13,35 @@ import { Menu1Page } from '../menu-1/menu-1.page';
 })
 export class Menu2Page implements OnInit {
 
+  cart: any=[];
+
   cartItems = [];
 
-  constructor(private navCtrl: NavController, private servicecartpage: ServiceCartPage , private alertController: AlertController) { }
+  constructor(private navCtrl: NavController, private servicecartpage: ServiceCartPage , private alertController: AlertController, private http:HttpClient,
+    public dataapi:DataapiService,
+  ) {
+    this.loadDataCart();
+  }
 
   ngOnInit() {
     this.cartItems = this.servicecartpage.getCartItems();
+    this.loadDataCart();
   }
+
+  loadDataCart(){
+    this.dataapi.listcart().subscribe({
+      next: (res: any) => {
+        console.log('เสร็จสิ้น');
+        this.cart = res;
+      },
+      error: (error: any) => {
+        console.log('error',error);
+      }
+    });
+  }
+
+
+
   goToHome(){
     this.navCtrl.navigateBack('/menu-1')
   }
@@ -29,7 +53,7 @@ export class Menu2Page implements OnInit {
     this.navCtrl.navigateForward('/waitfood')
   }
 
-  async deleteItem(index: number) {
+  /**async deleteItem(index: number) {
     const alert = await this.alertController.create({
       header: 'ลบสินค้าจากตะกร้า',
       message: 'ยืนยันที่จะลบสินค้าหรือไม่',
@@ -53,9 +77,9 @@ export class Menu2Page implements OnInit {
     });
 
     await alert.present();
-  }
+  }*/
 
-  item =[
+ /**  item =[
     {
       id : 1,
       name:'กะเพราเครื่องใน',
@@ -82,8 +106,10 @@ export class Menu2Page implements OnInit {
       detail:'Stir-fried Cabbage',
       imageURL : '/assets/imageForApp/กะหล่ำ.jpg'
     },
+  ]*/
 
-  ]
+
+
 
 
 }

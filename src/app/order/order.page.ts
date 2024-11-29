@@ -26,9 +26,7 @@ export class OrderPage implements OnInit {
     },
   ];
 
-  clearItems() {
-    this.products = [];
-  }
+ 
 
   public alertButtons = [
     {
@@ -64,6 +62,5 @@ public exitButtons = [
     },
   },
 ];
-
 
 }
